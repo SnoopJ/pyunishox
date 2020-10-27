@@ -5,5 +5,5 @@ setup(
     name="pyunishox",
     license="MIT",
     version="0.1",
-    ext_modules=cythonize([Extension("pyunishox", ["pyunishox.pyx"])])
+    ext_modules=cythonize([Extension("pyunishox", ["pyunishox.pyx"])], language_level=3)
 )
