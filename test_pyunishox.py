@@ -1,4 +1,3 @@
-import time
 from pyunishox import compress, decompress
 
 from hypothesis import given
