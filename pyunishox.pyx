@@ -7,12 +7,12 @@ cimport unishox
 MAXALLOC = 1024
 
 def compress(char* _in):
-    cdef array.array out = array.array('b', [0] * len(_in))  # on the way in, we can safely allocate...
+    cdef array.array out = array.array('b', [0] * MAXALLOC)
     cdef int N = unishox.unishox1_compress(_in, len(_in), out.data.as_chars, NULL)
     return out[:N].tobytes()
 
 def decompress(char* _in):
     cdef array.array _inn = array.array('b', _in)
-    cdef array.array out = array.array('b', [0] * MAXALLOC)  # on the way out, it's a crapshoot
+    cdef array.array out = array.array('b', [0] * MAXALLOC)
     cdef int N = unishox.unishox1_decompress(_inn.data.as_chars, len(_in), out.data.as_chars, NULL)
     return out[:N].tobytes()
