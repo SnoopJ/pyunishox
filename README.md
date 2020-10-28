@@ -2,8 +2,22 @@
 
 Python wrapper of the [Unishox](https://github.com/siara-cc/Unishox) encoder.
 
-See `test_pyunishox.py` for an example of the usage, but  
-**tl;dr: you want `from pyunishox import compress, decompress`**
+## Example usage
+
+```python
+from pyunishox import compress, decompress
+
+s = "おはようございます！"
+payload = s.encode("utf-8")
+
+print(f"Compressing payload: {s}...")
+c = compress(payload)
+print(f"Result: {c}")
+
+print("Decompressing...")
+d = decompress(c)
+print(f"Result: {d.decode('utf-8')}")
+```
 
 ## Installation
 
