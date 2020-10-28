@@ -14,9 +14,8 @@ def test_roundtrip(s):
     print(f"\t{[num for num in payload]}")
     cxed = compress(payload)
     print(f"cxed:\t{cxed}\t({len(payload)} bytes)")
-    print(f"\t{[num for num in cxed]}")
+    print(f"cxed:\t{cxed}\t({len(cxed)} bytes)")
     final = decompress(cxed)
-    print(f"decompressed:\t{final}\t({len(payload)} bytes)")
-    print(f"\t{[num for num in final]}")
+    print(f"decompressed:\t{final}\t({len(final)} bytes)")
 
     assert final == payload
