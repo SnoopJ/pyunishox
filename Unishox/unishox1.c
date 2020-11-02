@@ -395,7 +395,7 @@ int matchLine(const char *in, int len, int l, char *out, int *ol, struct us_lnk_
           last_len = 0;
           *ol = last_ol;
         }*/
-        printf("Len: %d, Dist: %d, Line: %d\n", last_len, last_dist, last_ctx);
+        //printf("Len: %d, Dist: %d, Line: %d\n", last_len, last_dist, last_ctx);
         j += last_len;
       }
     }
@@ -563,7 +563,7 @@ int unishox1_compress(const char *in, int len, char *out, struct us_lnk_lst *pre
           state = SHX_STATE_1;
           ol = append_bits(out, ol, BACK_FROM_UNI_CODE, BACK_FROM_UNI_CODE_LEN, state);
         }
-        printf("Bin:%d:%x\n", (unsigned char) c_in, (unsigned char) c_in);
+        //printf("Bin:%d:%x\n", (unsigned char) c_in, (unsigned char) c_in);
         ol = append_bits(out, ol, BIN_CODE, BIN_CODE_LEN, state);
         ol = encodeCount(out, ol, (unsigned char) c_in);
       }
